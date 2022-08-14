@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -15,7 +16,7 @@ export default function Register() {
             Email: data.get('email'),
             Password: data.get('password'),
             Contact: data.get('contact'),
-            URN: data.get('rollno'),
+            CRN: data.get('rollno'),
             Branch: data.get('branch'),
             Semester: data.get('sem'),
             Gender: data.get('gender'),
@@ -58,12 +59,12 @@ export default function Register() {
         <div className="container-fluid regi">
             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 register">
             <div className="img2 col-lg-6">
-            <img src="img5.png" className="img-responsive img2" />
+            <img src="img5new.png" className="img-responsive img2" />
             </div>
             <div className="col-lg-6 reg">
             <center>
             <form className="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 login" onSubmit={handleform}>
-                <h1 className="text">Register</h1>
+                <h3 className="text2">Registration for Society</h3>
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span> 
@@ -73,23 +74,6 @@ export default function Register() {
                         placeholder="Name"
                         className="form-control" />
            </div>
-            </div>
-            <div className="form-group frms" >
-            <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-envelope"></i></span> 
-           <input type={'email'} name="email" placeholder="Email" className="form-control" required/>
-           </div>
-            </div>
-
-            <div className="form-group frms">
-            <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
-             <input
-                        type={'password'}
-                        name="password"
-                        placeholder="Password"
-                        className="form-control" required />
-            </div>
             </div>
             <div className="form-group frms">
             <div className="input-group">
@@ -101,6 +85,13 @@ export default function Register() {
                         className="form-control" required />
             </div>
             </div>
+            <div className="form-group frms" >
+            <div className="input-group">
+             <span className="input-group-addon"><i className="glyphicon glyphicon-envelope"></i></span> 
+           <input type={'email'} name="email" placeholder="Email" className="form-control" required/>
+           </div>
+            </div>
+
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon"><i className="	glyphicon glyphicon-home"></i></span>
@@ -142,11 +133,20 @@ export default function Register() {
                     </select>
                     </div>
             </div>
-            
+            <div className="form-group frms">
+            <div className="input-group">
+             <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
+             <input
+                        type={'password'}
+                        name="password"
+                        placeholder="Password"
+                        className="form-control" required />
+            </div>
+            </div>
             <div className="form-group">
                 <input type={'submit'} value="Register" className="btn btn-info sub"/>
             </div>
-            <h5 className="plz"><i>Already Registered?</i><a href=""> Login</a></h5>
+            <h5 className="plz"><i>Already Registered?</i><Link to="/Login"> Login</Link></h5>
         </form>
       
         </center>

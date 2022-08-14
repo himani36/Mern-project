@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { FaBeer, FaHome, FaCaretRight, FaChevronDown, FaDashcube, FaWpforms, } from 'react-icons/fa';
 
 export default function Login() {
     var uri = "http://localhost:1200/";
@@ -26,13 +27,25 @@ export default function Login() {
             <center>
             <form className="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 login" onSubmit={handleform}>
                 <h1 className="text">Admin Login</h1>
-                <h4 className="plz">Please Enter Your E-mail and Password!</h4><br/>
             <div className="form-group frms" >
             <div className="input-group">
              <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span> 
-           <input type={'email'} name="emailadmin" placeholder="Admin Email" className="form-control" required/>
+           <input type={'text'} name="useradmin" placeholder="User ID" className="form-control" required/>
            </div>
             </div>
+            <div className="form-group frms" >
+            <div className="input-group">
+             <span className="input-group-addon"><i className="glyphicon glyphicon-home"></i></span> 
+           <input type={'text'} name="department" placeholder="Department" className="form-control" required/>
+           </div>
+            </div>
+            <div className="form-group frms" >
+            <div className="input-group">
+             <span className="input-group-addon"><i className='glyphicon glyphicon-user'></i></span> 
+           <input type={'text'} name="society" placeholder="Society" className="form-control" required/>
+           </div>
+            </div>
+            
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>

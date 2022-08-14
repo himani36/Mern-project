@@ -12,11 +12,13 @@ const connectionString = "mongodb+srv://Himani:himani@cluster0.a8nilmi.mongodb.n
 
 
 var Users;
+var Depart;
 MongoClient.connect(connectionString, function(err, succ) {
     if(err) throw err;
     console.log('Db Connected');
     var db = succ.db('Project');
     Users = db.collection('Users');
+    Depart = db.collection('Departmentname');
 })
 
 
@@ -27,9 +29,21 @@ app.post('/AddUser', (req,res) => {
     }
     )
 })
+app.post('/AddDepart', (req,res) => {
+    // console.log(req.body);
+    Depart.insertOne(req.body).then((succ) => {
+        res.send("ok");
+    }
+    )
+})
 
 app.get('/getUsers', (req,res) => {
     Users.find().toArray().then((succ) => {
+        res.send(succ);
+    })
+})
+app.get('/getDepart', (req,res) => {
+    Depart.find().toArray().then((succ) => {
         res.send(succ);
     })
 })
@@ -45,6 +59,15 @@ app.post('/deleteonedata', (req,res) => {
     console.log(req.body.id);
     var idd = new mongodb.ObjectId(req.body.id);
     Users.deleteOne({
+        _id: idd
+    }).then((succ) => {
+        res.send('Deleted');
+    })
+})
+app.post('/deletedept', (req,res) => {
+    console.log(req.body.id);
+    var idd = new mongodb.ObjectId(req.body.id);
+    Depart.deleteOne({
         _id: idd
     }).then((succ) => {
         res.send('Deleted');
