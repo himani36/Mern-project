@@ -11,6 +11,8 @@ import Dashbaord1 from './Pages/Dashboardadmin';
 import Members from './Pages/Members';
 import Deptadmin from './Pages/Deptadmin';
 import Sidebaradmin from './Pages/Sidebaradmin';
+import Societypanel from './Pages/Societypanel';
+import Soclogin from './Pages/Soclogin';
 function App() {
   return (
     <div >
@@ -23,6 +25,8 @@ function App() {
           <Route path='/Members' element={<Members />} />
           <Route path='/Deptadmin' element={<Deptadmin />} />
           <Route path='/Sidebaradmin' element={<Sidebaradmin />} />
+          <Route path='/Societypanel' element={<Societypanel />}/>
+          <Route path='/Soclogin' element={<Soclogin />}/>
           </Routes>
       </Router>
     </div>
