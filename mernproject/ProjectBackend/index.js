@@ -11,12 +11,7 @@ app.use(cors());
 const connectionString = "mongodb+srv://Himani:himani@cluster0.a8nilmi.mongodb.net/?retryWrites=true&w=majority";
 
 
-var Users;
-var Depart;
-var Soc;
-var Member;
-var Event;
-var Adminn
+var Users, Depart, Soc, Member,Event, Adminn;
 MongoClient.connect(connectionString, function(err, succ) {
     if(err) throw err;
     console.log('Db Connected');
@@ -29,14 +24,36 @@ MongoClient.connect(connectionString, function(err, succ) {
     Event= db.collection('EventDetails')
 })
 
-app.get('/AddAdmin', (req,res) => {
-    Adminn.insertOne({
-        userID:'admin',
-        Password:'123456',
+// app.get('/AddAdmin', (req,res) => {
+//     Adminn.insertOne({
+//         userID:'admin',
+//         Password:'123456',
+//     }).then((succ) => {
+//         res.send(succ);
+//     })
+// })
+
+app.post('/LoginAdmin', (req,res) => {
+    Adminn.findOne({
+        userID:req.body.Name,
+        Password:req.body.Password,
+    }).then((succ) => {
+        console.log(succ);
+        res.send(succ);
+    })
+})
+
+
+
+app.post('/getonecat', (req,res) => {
+    var idd = new mongodb.ObjectId(req.body.Id);
+    Soc.findOne({
+        _id:idd
     }).then((succ) => {
         res.send(succ);
     })
 })
+
 
 app.post('/AddUser', (req,res) => {
     // console.log(req.body);
@@ -69,6 +86,11 @@ app.post('/Addmember', (req,res) => {
         res.send("ok");
     }
     )
+})
+app.get('/getmember', (req,res) => {
+    Member.find().toArray().then((succ) => {
+        res.send(succ);
+    })
 })
 
 app.get('/getUsers', (req,res) => {

@@ -9,10 +9,11 @@ export default function Soclogin() {
         e.preventDefault();
         var data = new FormData(e.currentTarget);
         var obj = {
-            Email: data.get('emailadmin'),
-            Password: data.get('passwordadmin'),
+            UserID: data.get('socuser'),
+            Dashboard: data.get('department'),
+            Society: data.get('society'),
+            Password: data.get('password'),
         }
-      
     }
     const [data, setdata] = useState([]);
     function getdata(){
@@ -38,7 +39,7 @@ export default function Soclogin() {
             <div className="form-group frms" >
             <div className="input-group">
              <span className="input-group-addon glycol"><i className="glyphicon glyphicon-user "></i></span> 
-           <input type={'text'} name="useradmin" placeholder="User ID" className="form-control" required/>
+           <input type={'text'} name="socuser" placeholder="User ID" className="form-control" required/>
            </div>
             </div>
             <div className="form-group frms" >

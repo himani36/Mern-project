@@ -17,6 +17,9 @@ import Updateprofile from './Pages/Updateprofile';
 import LaunchEvent from './Pages/LaunchEvent';
 import Navbar from './Pages/Navbar';
 import Studentlist from './Pages/Studentlist';
+import SocSidebar from './Pages/SocSidebar';
+import SocNavbar from './Pages/SocNavbar';
+import SocDashboard from './Pages/SocDashboard';
 function App() {
   return (
     <div >
@@ -35,6 +38,9 @@ function App() {
           <Route path='/LaunchEvent' element={<LaunchEvent/>}/>
           <Route path='/Navbar' element={<Navbar/>}/>
           <Route path='/Studentlist' element={<Studentlist/>}/>
+          <Route path='/SocDashboard' element={<SocDashboard/>}/> 
+          <Route path='/SocNavbar' element={<SocNavbar/>}/>
+           <Route path='/SocSidebar' element={<SocSidebar/>}/>
           </Routes>
       </Router>
     </div>
