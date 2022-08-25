@@ -4,6 +4,7 @@ import Sidebaradmin from "./Sidebaradmin";
 import swal from "sweetalert";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Deptadmin() {
 
@@ -106,6 +107,10 @@ export default function Deptadmin() {
     var path = '/Members?q='+x;
     navi(path);
   }
+  function view(x) {
+    var path = '/Viewmembers?q='+x;
+    navi(path);
+  }
 
 
 
@@ -128,8 +133,7 @@ export default function Deptadmin() {
                     <select
                       name="departmentname"
                       className="form-control"
-                      required
-                    >
+                      required>
                       <option value="" disabled selected hidden>
                         Select Department
                       </option>
@@ -292,7 +296,7 @@ export default function Deptadmin() {
                           
                         </div>
                       </td>
-                      <td><button onClick={() => viewmember(row._id)} className="btn btn-info">
+                      <td><button onClick={() => view(row._id)} className="btn btn-info">
                            View
                           </button></td>
                     </tr>

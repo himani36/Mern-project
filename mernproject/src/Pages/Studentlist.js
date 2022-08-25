@@ -19,7 +19,7 @@ export default function Studentlist() {
     var uri= "http://localhost:1200/";
     const [data, setdata] = useState([]);
     function getdata(){
-        axios.get(uri+'getUsers').then((succ) => {
+        axios.post(uri+'getUsers').then((succ) => {
             setdata(succ.data);
             console.log(succ.data);
         })

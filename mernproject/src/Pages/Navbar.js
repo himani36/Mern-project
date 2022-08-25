@@ -17,11 +17,11 @@ var navi = useNavigate();
     })
 
 function logout(){
-  axios.post(uri + 'LoginAdmin').then((succ) => {
-      localStorage.removeItem('AdminLogin', succ.data._id);
+  // axios.post(uri + 'LoginAdmin').then((succ) => {
+      localStorage.removeItem('AdminLogin');
       navi('/Loginadmin');
-      console.log(succ.data);
-  })
+      // console.log(succ.data);
+  // })
 }
 
   return (

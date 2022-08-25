@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, {useState } from "react";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import Mainnavbar from "./MainNavbar";
 export default function Loginadmin() {
   const [show, setshow] = useState(true);
 
@@ -18,14 +20,23 @@ export default function Loginadmin() {
 
     axios.post(uri+'LoginAdmin', datas).then((succ) => {
      console.log(succ.data);
+     if(succ.data._id){
+      console.log('yes');
       localStorage.setItem('AdminLogin', succ.data._id);
       navi('/Dashboardadmin');
+     }
+     else{
+      console.log('no');
+      alert("Wrong Id or Password");
+     }
+      
     })
   }
 
 
   return (
     <div>
+      <Mainnavbar/>
       <div className="main ">
         <div className="container-fluid log">
           <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 frm">
