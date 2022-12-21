@@ -18,7 +18,7 @@ export default function Curmembers() {
         navi("/Login");
       }
     });
-  console.log(idd);
+ // console.log(idd);
   
 const [data2, setdata2] = useState([]);
 const [dep, setdep] = useState("");
@@ -31,14 +31,14 @@ function getdata2() {
     setdep(succ.data[0].Department);
     setsoc(succ.data[0].Society);
     setlogo(succ.data[0].URL);
-    console.log(succ.data);
+   // console.log(succ.data);
   });
 }
 }
 useEffect(() => {
           getdata2();},[idd]);
-          console.log(dep);
-          console.log(soc);
+       //   console.log(dep);
+       //   console.log(soc);
 
   const [branch, setbranch] = useState("");
   const [coord, setcoord] = useState("");
@@ -56,7 +56,7 @@ useEffect(() => {
   function getdata() {
     if (soc) {
       axios.post(uri + "showmember", { Dep: dep, Soc: soc }).then((succ) => {
-        console.log(succ.data);
+        //console.log(succ.data);
         setbranch(succ.data[0].Branch);
         setcoord(succ.data[0].Coordinator);
         setcocoord(succ.data[0].Cocoordinator);

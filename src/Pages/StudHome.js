@@ -23,7 +23,7 @@ export default function StudHome() {
   function getdata2() {
     axios.post(uri + "getevet").then((succ) => {
       setdata2(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function StudHome() {
   function getdata1() {
     axios.post(uri + "gettlogoo").then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {

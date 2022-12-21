@@ -43,7 +43,7 @@ export default function Register() {
     function getdata1(){
         axios.get(uri+'getsociety').then((succ) => {
             setdata1(succ.data);
-            console.log(succ.data);
+            // console.log(succ.data);
         })
     }
 

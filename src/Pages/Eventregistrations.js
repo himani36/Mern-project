@@ -26,7 +26,7 @@ export default function EventRegistrations() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonecat", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         //console.log(succ.data.Department);
         //console.log(succ.data.Society)
         setbranch(succ.data.Department);
@@ -53,13 +53,13 @@ export default function EventRegistrations() {
       getdata2();
     }
   }, [dep]);
-  console.log(fname);
+  // console.log(fname);
 
   const [data1, setdata1] = useState([]);
   function getdata1() {
     axios.post(uri + "getregistrations", {Name: fname , Dep: dep}).then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {
@@ -110,7 +110,7 @@ const [data3, setdata3] = useState([]);
       var Department = branch;
       var name= data.get('name');
      var EventName= fname;
-      console.log(name);
+      // console.log(name);
       var dtes= new Date();
       var ref = db.ref();
       const metadata={
@@ -118,7 +118,7 @@ const [data3, setdata3] = useState([]);
       }
       ref.child(name.name).put(name,metadata).then(snapshot =>
         snapshot.ref.getDownloadURL()).then(url=>{
-          console.log(url)
+          // console.log(url)
           var imgdata={ 
             Society: Society,
             Department: Department,
@@ -127,7 +127,7 @@ const [data3, setdata3] = useState([]);
 
           }
           axios.post(uri+"Addwinners",imgdata).then((succ)=>{
-            console.log(succ.data)
+            // console.log(succ.data)
             if(succ.data == "ok"){
                       swal("Data Added","","success")
                       e.target.reset();

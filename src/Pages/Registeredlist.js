@@ -24,7 +24,7 @@ export default function Registeredlist() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonecat", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         //console.log(succ.data.Department);
         //console.log(succ.data.Society)
         setbranch(succ.data.Department);
@@ -41,7 +41,7 @@ export default function Registeredlist() {
   function getdata1() {
     axios.post(uri + "getmember1", { Dep: dep }).then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {

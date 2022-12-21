@@ -21,7 +21,7 @@ export default function () {
   function checkid() {
     if (id) {
       axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Department);
         setdep(succ.data.Society);
         setregdate(succ.data[0].RegDate);
@@ -37,7 +37,7 @@ export default function () {
   function getdata1() {
     axios.post(uri + "getevents", { Dep: dep }).then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {

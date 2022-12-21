@@ -42,7 +42,7 @@ export default function Deptadmin() {
 
   function handleform1(e) {
     e.preventDefault();
-    console.log(Math.floor(Math.random()*1000));
+    // console.log(Math.floor(Math.random()*1000));
     var data = new FormData(e.currentTarget);
     var rand= Math.floor(Math.random()*10000);
     var obj = {
@@ -67,7 +67,7 @@ export default function Deptadmin() {
   function getdata() {
     axios.get(uri + "getSociety").then((succ) => {
       setdata(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   
@@ -79,7 +79,7 @@ export default function Deptadmin() {
   function getdata1() {
     axios.get(uri + "getDepart").then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
 

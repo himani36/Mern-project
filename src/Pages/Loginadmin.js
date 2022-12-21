@@ -19,14 +19,14 @@ export default function Loginadmin() {
     }
 
     axios.post(uri+'LoginAdmin', datas).then((succ) => {
-     console.log(succ.data);
+    //  console.log(succ.data);
      if(succ.data._id){
-      console.log('yes');
+      // console.log('yes');
       localStorage.setItem('AdminLogin', succ.data._id);
       navi('/Deptadmin');
      }
      else{
-      console.log('no');
+      // console.log('no');
       alert("Wrong Id or Password");
      }
       

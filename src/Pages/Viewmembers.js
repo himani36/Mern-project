@@ -16,10 +16,10 @@ export default function Departmentadmin() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonecat", { Id: id }).then((succ) => {
-        console.log(id);
-        console.log(succ.data);
+        // console.log(id);
+        // console.log(succ.data);
         setname(succ.data.Department);
-        console.log(succ.data.Department);
+        // console.log(succ.data.Department);
         setdep(succ.data.Society);
       });
     }
@@ -45,7 +45,7 @@ export default function Departmentadmin() {
   function getdata() {
     if (name) {
       axios.post(uri + "showmember", { Dep: name, Soc: dep }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setbranch(succ.data[0].Branch);
         setcoord(succ.data[0].Coordinator);
         setcocoord(succ.data[0].Cocoordinator);

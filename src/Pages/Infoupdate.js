@@ -34,7 +34,7 @@ export default function Infoupdate() {
   function checkid() {
     if (id) {
       axios.post(uri + "getoneuser", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Name);
         setrollno(succ.data.CRN);
         setbranch(succ.data.Branch);
@@ -44,7 +44,7 @@ export default function Infoupdate() {
         setcontact(succ.data.Contact);
         setpassword(succ.data.Password);
         setidd(succ.data._id);
-        console.log(succ.data.CRN);
+        // console.log(succ.data.CRN);
       });
     }
   }
@@ -52,7 +52,7 @@ export default function Infoupdate() {
   useEffect(() => {
     checkid();
   }, []);
-console.log(idd);
+// console.log(idd);
     function handleform(e) {
         e.preventDefault();
         var dtes= new Date();
@@ -94,7 +94,7 @@ console.log(idd);
     function getdata(){
         axios.get(uri+'getsociety').then((succ) => {
             setdata1(succ.data);
-            console.log(succ.data);
+            // console.log(succ.data);
         })
     }
 
@@ -104,7 +104,7 @@ console.log(idd);
     function getdata1(){
         axios.get(uri+'getsociety').then((succ) => {
             setdata1(succ.data);
-            console.log(succ.data);
+            // console.log(succ.data);
         })
     }
 

@@ -19,7 +19,7 @@ export default function Login() {
     };
     if(obj){
       axios.post(uri + "Loginstudent1", obj).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         if (succ.data._id) {
           // alert("You cannot Login as not approved by admin yet!");
           Swal.fire({
@@ -31,13 +31,13 @@ export default function Login() {
           })
         } else {
           axios.post(uri + "Loginstudent", obj).then((succ) => {
-            console.log(succ.data);
+            // console.log(succ.data);
             if (succ.data._id) {
-              console.log("yes");
+              // console.log("yes");
               localStorage.setItem("Studentlogin", succ.data._id);
               navi("/StudHome");
             } else {
-              console.log("no");
+              // console.log("no");
               // alert("The CRN or password you entered did not match our records.             Please re-check or Register Yourself!" );
               Swal.fire({
                 position: 'top-end',

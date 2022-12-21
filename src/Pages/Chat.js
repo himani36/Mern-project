@@ -23,7 +23,7 @@ export default function Chat() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        //console.log(succ.data);
         setname(succ.data.Department);
         setdep(succ.data.Society);
       });
@@ -38,7 +38,7 @@ export default function Chat() {
   function checkcoord() {
     if (dep) {
       axios.post(uri + "showmember", { Dep: name, Soc: dep }).then((succ) => {
-        console.log(succ.data);
+        //console.log(succ.data);
         setcoord(succ.data[0].Coordinator);
       });
     }
@@ -81,7 +81,7 @@ export default function Chat() {
   function chatobt() {
     if (coord) {
       axios.post(uri + "getchat", { Dep: dep }).then((succ) => {
-        console.log(succ.data);
+       // console.log(succ.data);
         setdata1(succ.data);
       });
     }

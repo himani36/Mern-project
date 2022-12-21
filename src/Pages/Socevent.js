@@ -17,7 +17,7 @@ export default function () {
         navi("/Login");
       }
     });
-  console.log(idd);
+  // console.log(idd);
   
 const [data2, setdata2] = useState([]);
 const [dep, setdep] = useState("");
@@ -30,21 +30,21 @@ function getdata2() {
     setdep(succ.data[0].Department);
     setsoc(succ.data[0].Society);
     setlogo(succ.data[0].URL);
-    console.log(succ.data);
+    // console.log(succ.data);
   });
 }
 }
 useEffect(() => {
           getdata2();},[idd]);
-          console.log(dep);
-          console.log(soc);
+          // console.log(dep);
+          // console.log(soc);
 
     const [data1, setdata1] = useState([]);
     function getdata1() {
         if(soc){
       axios.post(uri + "getsocevent",{Soc:soc, Dep:dep}).then((succ) => {
         setdata1(succ.data);
-        console.log(succ.data);
+        // console.log(succ.data);
       });
     }
 }

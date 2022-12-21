@@ -18,13 +18,13 @@ export default function Soclogin() {
       Password: data.get("password"),
     };
     axios.post(uri + "Loginsoc", obj).then((succ) => {
-      console.log(succ.data);
+      // console.log(succ.data);
       if (succ.data._id) {
-        console.log("yes");
+        // console.log("yes");
         localStorage.setItem("SocietyLogin", succ.data._id);
         navi("/SocDashboard");
       } else {
-        console.log("no");
+        // console.log("no");
         alert("Wrong CRN or Password");
       }
     });
@@ -34,7 +34,7 @@ export default function Soclogin() {
   function getdata() {
     axios.get(uri + "getSociety").then((succ) => {
       setdata(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {

@@ -31,7 +31,7 @@ export default function SocDashboard() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Department);
         setdep(succ.data.Society);
       });
@@ -48,7 +48,7 @@ export default function SocDashboard() {
     var Society = dep;
     var Department = branch;
     var name = data.get("name");
-    console.log(name);
+    // console.log(name);
     var ref = db.ref();
     const metadata = {
       contentType: name.type,
@@ -58,14 +58,14 @@ export default function SocDashboard() {
       .put(name, metadata)
       .then((snapshot) => snapshot.ref.getDownloadURL())
       .then((url) => {
-        console.log(url);
+        // console.log(url);
         var imgdata = {
           Society: Society,
           Department: Department,
           URL: url,
         };
         axios.post(uri + "AddLogo", imgdata).then((succ) => {
-          console.log(succ.data);
+          // console.log(succ.data);
           if (succ.data == "ok") {
             swal("Data Added", "", "success");
             e.target.reset();

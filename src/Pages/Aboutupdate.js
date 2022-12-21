@@ -24,7 +24,7 @@ export default function () {
     function checkid() {
       if (id) {
         axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-          console.log(succ.data);
+          // console.log(succ.data);
           setname(succ.data.Department);
           setdep(succ.data.Society);
         });
@@ -91,7 +91,7 @@ export default function () {
         }
         ref.child(name.name).put(name,metadata).then(snapshot =>
           snapshot.ref.getDownloadURL()).then(url=>{
-            console.log(url)
+        //    console.log(url)
             var obj={ 
               idd: idd,
             About: About,

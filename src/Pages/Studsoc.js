@@ -35,7 +35,7 @@ export default function () {
         function getdata1() {
           axios.post(uri + "gettlogo" ).then((succ) => {
             setdata1(succ.data);
-            console.log(succ.data);
+            // console.log(succ.data);
           });
         }
         useEffect(() => {

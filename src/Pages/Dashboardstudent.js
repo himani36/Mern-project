@@ -49,14 +49,14 @@ export default function Dashboardstudent() {
   }, []);
 
   var formname = name + " ("+ crn + ")";
-  console.log(formname)
+  // console.log(formname)
   
   const [soc, setsoc] = useState([]);
   const [dep, setdep] = useState("");
   function getdata2() {
     if (formname) {
       axios.post(uri + "getalldata", { Name : formname }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setsoc(succ.data);
       });
     }
@@ -108,11 +108,11 @@ export default function Dashboardstudent() {
   function getdt() {
     if (id) {
       axios.post(uri + "getnaam", {ID : id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setdat(succ.data);
         setsoc1(succ.data[0].Society);
         setdepart(succ.data[0].Branch)
-        console.log(succ.data[0].Society);
+        // console.log(succ.data[0].Society);
       });
     }
   }
@@ -124,7 +124,7 @@ export default function Dashboardstudent() {
   function chatobt() {
     if (soc1) {
       axios.post(uri + "getchat", { Dep: soc1 }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setdata1(succ.data);
       });
     }

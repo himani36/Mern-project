@@ -22,7 +22,7 @@ export default function Updateprofile() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonecat", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         //console.log(succ.data.Department);
         //console.log(succ.data.Society)
         setbranch(succ.data.Department);
@@ -39,7 +39,7 @@ export default function Updateprofile() {
   function getdata1() {
     axios.post(uri + "getmember", { Dep: dep }).then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function Updateprofile() {
   function getdata() {
     axios.post(uri + "showmember", { Dep: branch, Soc: dep }).then((succ) => {
       setdata(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
       setidd(succ.data[0]._id);
       setcoord(succ.data[0].Coordinator);
       setcocoord(succ.data[0].Cocoordinator);

@@ -17,7 +17,7 @@ export default function () {
       navi("/Login");
     }
   });
-  console.log(idd);
+//  console.log(idd);
 
   const [name, setname] = useState("");
   const [soc, setsoc] = useState("");
@@ -60,8 +60,8 @@ export default function () {
   function checkid() {
     if (id) {
       axios.post(uri + "getoneuser", { Id: id }).then((succ) => {
-        console.log(succ.data);
-        console.log(succ.data.Branch);
+       // console.log(succ.data);
+       // console.log(succ.data.Branch);
         setname1(succ.data.Name);
         setcrn(succ.data.CRN);
         setdept(succ.data.Branch);
@@ -110,8 +110,8 @@ export default function () {
   if (g1.getTime() > g2.getTime()) {
     x = x + 1;
   }
-  console.log(g1.getTime());
-  console.log(g2.getTime());
+  //console.log(g1.getTime());
+  //console.log(g2.getTime());
   // console.log(x);
 
   const [getfile, setgetfile] = useState([]);
@@ -126,7 +126,7 @@ export default function () {
       getdata3();
     }
   }, [name]);
-  console.log(getfile);
+ // console.log(getfile);
   return (
     <div className="evie">
       <Studentnavbar />

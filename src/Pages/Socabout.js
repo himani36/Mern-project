@@ -24,7 +24,7 @@ export default function () {
     function checkid() {
       if (id) {
         axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-          console.log(succ.data);
+          // console.log(succ.data);
           setname(succ.data.Department);
           setdep(succ.data.Society);
         });
@@ -53,7 +53,7 @@ export default function () {
       var Instagram= data.get('instagram');
       var Twitter= data.get('twitter');
       var Faculty= data.get('faculty');
-      console.log(name);
+      // console.log(name);
   
       var ref = db.ref();
       const metadata={
@@ -61,7 +61,7 @@ export default function () {
       }
       ref.child(name.name).put(name,metadata).then(snapshot =>
         snapshot.ref.getDownloadURL()).then(url=>{
-          console.log(url)
+          // console.log(url)
           var imgdata={ 
             Society: Society,
             Department: Department,
@@ -86,7 +86,7 @@ export default function () {
             .then((willAdd) => {
               if (willAdd) {
           axios.post(uri+"Addaboutus",imgdata).then((succ)=>{
-            console.log(succ.data)
+            // console.log(succ.data)
             if(succ.data == "ok"){
                       swal("Data Added","","success")
                       e.target.name.focus();

@@ -31,8 +31,8 @@ export default function Loginadmin() {
   function checkid() {
     if (id) {
       axios.post(uri + "getoneuser", { Id: id }).then((succ) => {
-        console.log(succ.data);
-        console.log(succ.data.Branch);
+       // console.log(succ.data);
+        //console.log(succ.data.Branch);
         setname(succ.data.Name);
         setcrn(succ.data.CRN);
         setdept(succ.data.Branch);
@@ -80,7 +80,7 @@ export default function Loginadmin() {
   function getdata1() {
     axios.post(uri + "getstusociety").then((succ) => {
       setdata1(succ.data);
-      console.log(succ.data);
+     // console.log(succ.data);
     });
   }
 
@@ -92,7 +92,7 @@ const[namme, setnamme]= useState("");
     axios.post(uri + "GetApplysoc", { Dep: dept, Name: name }).then((succ) => {
       setnamme(succ.data.Name);
       setdata2(succ.data);
-      console.log(succ.data);
+     // console.log(succ.data);
     });
   }
 

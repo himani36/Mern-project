@@ -16,7 +16,7 @@ export default function Currentnav() {
         navi("/Login");
       }
     });
-  console.log(idd);
+ // console.log(idd);
 
   const [name, setname] = useState("");
   const [rollno, setrollno] = useState("");
@@ -26,10 +26,10 @@ export default function Currentnav() {
   function checkid() {
     if (id) {
       axios.post(uri + "getoneuser", { Id: id }).then((succ) => {
-        console.log(succ.data);
+      //  console.log(succ.data);
         setname(succ.data.Name);
         setrollno(succ.data.CRN);
-        console.log(succ.data.CRN);
+      //  console.log(succ.data.CRN);
       });
     }
   }

@@ -22,7 +22,7 @@ const [name, setname] = useState("");
   function checkid() {
     if (id) {
       axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Department);
         setdep(succ.data.Society);
       });
@@ -37,7 +37,7 @@ const [name, setname] = useState("");
   function checkcoord(){
     if(dep){
       axios.post(uri+ "showmember", {Dep:name, Soc:dep}).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setcoord(succ.data[0].Coordinator);
       });
     }

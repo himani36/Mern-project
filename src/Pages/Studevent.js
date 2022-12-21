@@ -42,8 +42,8 @@ export default function () {
     if (g1.getTime() > g2.getTime()) {
     x = x+1;
     }
-    console.log(g1.getTime());
-    console.log(g2.getTime());
+    // console.log(g1.getTime());
+    // console.log(g2.getTime());
     // console.log(x);
   return (
     <div className="Studeventsoc">

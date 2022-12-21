@@ -22,7 +22,7 @@ export default function Studentlist() {
     function getdata() {
         axios.post(uri + 'getUsers').then((succ) => {
             setdata(succ.data);
-            console.log(succ.data);
+            // console.log(succ.data);
         })
     }
     useEffect(() => { getdata(); }, [])

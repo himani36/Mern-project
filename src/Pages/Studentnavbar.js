@@ -22,10 +22,10 @@ export default function Studentnavbar() {
   function checkid() {
     if (id) {
       axios.post(uri + "getoneuser", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Name);
         setrollno(succ.data.CRN);
-        console.log(succ.data.CRN);
+        // console.log(succ.data.CRN);
       });
     }
   }
@@ -42,7 +42,7 @@ export default function Studentnavbar() {
     if (id) {
       axios.post(uri + "getdesg").then((succ) => {
         setdata3(succ.data);
-        console.log(succ.data);
+        // console.log(succ.data);
       });
     }
   }

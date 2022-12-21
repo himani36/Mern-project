@@ -150,7 +150,7 @@ app.post("/getcoordeml", (req, res) => {
     CRN: req.body.cnn
   }).then((succ) => {
     res.send(succ);
-    console.log(succ);
+    // console.log(succ);
     
   });
 });
@@ -387,7 +387,7 @@ app.post("/getfeedback", (req, res) => {
     .toArray()
     .then((succ) => {
       res.send(succ);
-      console.log(succ);
+      // console.log(succ);
     });
 });
 app.post("/getregistrations", (req, res) => {
@@ -398,7 +398,7 @@ app.post("/getregistrations", (req, res) => {
     .toArray()
     .then((succ) => {
       res.send(succ);
-      console.log(succ);
+      // console.log(succ);
     });
 });
 
@@ -411,7 +411,7 @@ app.post("/geteventname", (req, res) => {
     .toArray()
     .then((succ) => {
       res.send(succ);
-      console.log(succ);
+      // console.log(succ);
     });
 });
 
@@ -497,7 +497,7 @@ app.post("/getstusociety", (req, res) => {
 });
 
 app.post("/getoneUsers", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   Users.findOne(req.body).then((succ) => {
     //console.log(succ);
     res.send(succ);
@@ -643,11 +643,11 @@ app.post("/getnaam", (req, res) => {
     .toArray()
     .then((succ) => {
       res.send(succ);
-      console.log(succ);
+      // console.log(succ);
     });
 });
 app.post("/getalldata", (req, res) => {
-  console.log(req.body.Name);
+  // console.log(req.body.Name);
   Member.find({
     $or: [
       {
@@ -694,7 +694,7 @@ app.post("/getalldata", (req, res) => {
     .toArray()
     .then((succc) => {
       res.send(succc);
-      console.log(succc);
+      // console.log(succc);
     });
 });
 
@@ -744,7 +744,7 @@ app.post("/updatemembers", (req, res) => {
 });
 
 app.post("/updateinfo", (req, res) => {
-   console.log(req.body.idd);
+  //  console.log(req.body.idd);
   var idd = new mongodb.ObjectId(req.body.idd);
   Users.updateOne(
     {
@@ -822,7 +822,7 @@ app.post('/updateuser', (req,res) => {
 
 
   app.post('/updatesocstatus', (req,res) => {
-   console.log(req.body.Name);
+  //  console.log(req.body.Name);
     Apply.updateOne({
      Name : req.body.Name, 
      Societyreg:req.body.Soc,

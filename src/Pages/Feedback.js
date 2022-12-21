@@ -22,7 +22,7 @@ const Feedback= () =>{
         navi("/Login");
       }
     });
-  console.log(idd);
+  // console.log(idd);
   
 const [data2, setdata2] = useState([]);
 const [dep, setdep] = useState("");
@@ -35,14 +35,14 @@ function getdata2() {
     setdep(succ.data[0].Department);
     setsoc(succ.data[0].Society);
     setlogo(succ.data[0].URL);
-    console.log(succ.data);
+    // console.log(succ.data);
   });
 }
 }
 useEffect(() => {
           getdata2();},[idd]);
-          console.log(dep);
-          console.log(soc);
+          // console.log(dep);
+          // console.log(soc);
 
 
 
@@ -51,7 +51,7 @@ useEffect(() => {
           function getdata() {
             if (soc) {
               axios.post(uri + "showmember", { Dep: dep, Soc: soc }).then((succ) => {
-                console.log(succ.data);
+                // console.log(succ.data);
                 setcoord(succ.data[0].Coordinator);
               });
             }
@@ -71,7 +71,7 @@ useEffect(() => {
             if (b) {
               axios.post(uri + "getcoordeml", {Name1: b, cnn:  a[1].slice(0, 7)}).then((succ) => {
                 setdatab(succ.data);
-                console.log(succ.data);
+                // console.log(succ.data);
                 seteml(succ.data.Email);
               }); 
           }
@@ -92,8 +92,8 @@ useEffect(() => {
           function checkid() {
             if (id) {
               axios.post(uri + "getoneuser", { Id: id }).then((succ) => {
-                console.log(succ.data);
-                console.log(succ.data.Branch);
+                // console.log(succ.data);
+                // console.log(succ.data.Branch);
                 setname1(succ.data.Name);
                 setcrn(succ.data.CRN);
                 setdept(succ.data.Branch);
@@ -111,9 +111,9 @@ useEffect(() => {
           const sendEmail = (e) => {
       emailjs.sendForm('service_c0hxe9i', 'template_czrl7dq', form.current, '5xt65huVD1rbST7ra')
       .then((result) => {
-          console.log(result.text);
+          // console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+          // console.log(error.text);
       });
        
     

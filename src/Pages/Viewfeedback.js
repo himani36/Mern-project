@@ -21,7 +21,7 @@ export default function Viewfeedback() {
     function checkid() {
       if (id) {
         axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-          console.log(succ.data);
+          // console.log(succ.data);
           setname(succ.data.Department);
           setdep(succ.data.Society);
         });
@@ -36,7 +36,7 @@ export default function Viewfeedback() {
     function getdata1() {
       axios.post(uri + "getfeedback", { Dep: dep }).then((succ) => {
         setdata1(succ.data);
-        console.log(succ.data);
+        // console.log(succ.data);
       });
     }
     useEffect(() => {

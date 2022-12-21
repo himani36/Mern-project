@@ -18,7 +18,7 @@ export default function Currentsoc() {
         navi("/Login");
       }
     });
-  console.log(idd);
+ // console.log(idd);
   
 const [data2, setdata2] = useState([]);
 const [dep, setdep] = useState("");
@@ -31,14 +31,14 @@ function getdata2() {
     setdep(succ.data[0].Department);
     setsoc(succ.data[0].Society);
     setlogo(succ.data[0].URL);
-    console.log(succ.data);
+   // console.log(succ.data);
   });
 }
 }
 useEffect(() => {
           getdata2();},[idd]);
-          console.log(dep);
-          console.log(soc);
+        //  console.log(dep);
+        //  console.log(soc);
 
           const [data1, setdata1] = useState([]);
           const [about, setabout] = useState("");
@@ -65,7 +65,7 @@ useEffect(() => {
               setinstagram(succ.data[0].Instagram);
               settwitter(succ.data[0].Twitter);
               setfaculty(succ.data[0].Faculty);
-              console.log(succ.data);
+            //  console.log(succ.data);
             });
           }
         }

@@ -26,7 +26,7 @@ const [branch, setname] = useState("");
   function checkid() {
     if (id) {
       axios.post(uri + "getonesoc", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Department);
         setdep(succ.data.Society);
       });
@@ -52,7 +52,7 @@ const [branch, setname] = useState("");
    var Reg= data.get('regdate');
     var Description= data.get('eventdescription');
     
-    console.log(name);
+    // console.log(name);
     var dtes= new Date();
 
     var ref = db.ref();
@@ -61,7 +61,7 @@ const [branch, setname] = useState("");
     }
     ref.child(name.name).put(name,metadata).then(snapshot =>
       snapshot.ref.getDownloadURL()).then(url=>{
-        console.log(url)
+        // console.log(url)
         var imgdata={ 
           Society: Society,
           Department: Department,
@@ -76,7 +76,7 @@ const [branch, setname] = useState("");
           CurrentDate: dtes.getDate()+'-'+(dtes.getMonth()+1)+'-'+(dtes.getFullYear()),
         }
         axios.post(uri+"AddEventDetails",imgdata).then((succ)=>{
-          console.log(succ.data)
+          // console.log(succ.data)
           if(succ.data == "ok"){
                     swal("Data Added","","success")
                     e.target.reset();

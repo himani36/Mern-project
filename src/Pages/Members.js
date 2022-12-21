@@ -32,7 +32,7 @@ export default function Departmentadmin() {
       if (succ.data == "ok") {
         swal("Data Added", "", "success");
         getdata();
- console.log(obj.Coordinator);
+//  console.log(obj.Coordinator);
     var a =  obj.Coordinator.split(' (');
     var b =  obj.Cocoordinator.split(' (');
     var c =  obj.Pro.split(' (');
@@ -45,7 +45,7 @@ export default function Departmentadmin() {
     var k =  obj.Content.split(' (');
     var l =  obj.ActiveMembers.split(' (');
     var m =  obj.Executives.split(' (');
-    console.log(a);
+    // console.log(a);
      
       axios.post(uri + "updatesocstatus", { Name: a[0], Soc:dep }).then((succ) => {
       if (succ.data == "updated") {
@@ -118,7 +118,7 @@ export default function Departmentadmin() {
   function checkid() {
     if (id) {
       axios.post(uri + "getonecat", { Id: id }).then((succ) => {
-        console.log(succ.data);
+        // console.log(succ.data);
         setname(succ.data.Department);
         setdep(succ.data.Society);
       });
@@ -133,7 +133,7 @@ export default function Departmentadmin() {
   function getdata() {
     axios.post(uri + "getmember1", { Dep: dep }).then((succ) => {
       setdata(succ.data);
-      console.log(succ.data);
+      // console.log(succ.data);
     });
   }
   useEffect(() => {
